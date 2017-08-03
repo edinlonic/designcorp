@@ -21,11 +21,11 @@ var mailOptions = {
   text: 'test'
 };
 
-app.get('/', function(req, res){
+app.get('/api', function(req, res){
     res.send('working');
 });
 
-app.post('/sendmail', urlencodedParser, function (req, res) {
+app.post('/api/sendmail', urlencodedParser, function (req, res) {
     var mailOptions = {};
     if (req.body != undefined) {
         mailOptions = {
