@@ -43,9 +43,9 @@ app.post('/sendmail', urlencodedParser, function (req, res) {
         });
     }
 });
-
-app.listen(3000);
-console.log('API is running on port 3000!');
+var port = process.env.PORT || 8080;
+app.listen(port);
+console.log('API is running on port ' + port);
 
 
 // { "from" :"edin.lonic@edu.fit.ba", "to" :"edin.lonic@edu.fit.ba, lonic__@hotmail.com, ognjen.medan@edu.fit.ba, naida.frlj@edu.fit.ba" , "subject" :"test from json", "content" :"Hello from the other sideee" }
