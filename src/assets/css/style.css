@@ -20,3 +20,14 @@
   color:greenyellow;
   font-weight: bold;
 }
+#contact-form .btn-xl{
+  padding-left: 20px !important;
+      padding-right: 60px !important;
+}
+
+.hide-loader{
+  visibility: hidden;
+}
+.show-loader{
+  visibility: visible;
+}

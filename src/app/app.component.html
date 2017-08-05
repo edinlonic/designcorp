@@ -235,7 +235,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form #myForm="ngForm" name="sentMessage" novalidate>
+                    <form #myForm="ngForm" id='contact-form' name="sentMessage" novalidate>
                         
                         <div class="row">
                             <div class="col-md-6">
@@ -268,9 +268,10 @@
                             </div>
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
-                                <button [disabled]="!myForm.form.valid" type="button" (click)="sendMail(myForm)" class="btn btn-xl">Send Message</button>
+                                    
+                                <button [disabled]="!myForm.form.valid" type="button" (click)="sendMail(myForm)" class="btn btn-xl"><img class="{{contact.showLoader}}" height="50px" width="50px" src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Pedro_luis_romani_ruiz.gif" />  Send Message</button>
                                 <div *ngIf="contact.formSuccess">
-                                        <p class="help-block text-success">Success!</p>
+                                        <p class="help-block text-success">Mail succesfully sent, we will reply to you as soon as we can!</p>
                                 </div>
                             </div>
                         </div>

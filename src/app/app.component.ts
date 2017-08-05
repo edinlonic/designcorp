@@ -19,7 +19,8 @@ export class AppComponent {
               email:"",
               subject:"",
               message:"",
-              formSuccess : false };
+              formSuccess : false,
+              showLoader : "hide-loader" };
   public options = new RequestOptions({ headers: this._headers });
 
     ngAfterViewInit() {
@@ -30,6 +31,9 @@ export class AppComponent {
     $("html, body").stop().animate({scrollTop:$(o.attr("href")).offset().top-50},700,"easeInOutExpo"),
                         a.preventDefault()}),$("body").scrollspy({target:".navbar-fixed-top",offset:51}), $(".navbar-collapse ul li a").click(function(){$(".navbar-toggle:visible").click()}),$("#mainNav").affix({offset:{top:100}})}());
     
+
+
+
   }
 
 
@@ -39,11 +43,12 @@ export class AppComponent {
   }
 public cleanContactForm(myForm){
 myForm.resetForm();
+this.contact.showLoader = "hide-loader";
 this.contact.formSuccess = true;
 }
 
   public sendMail( myForm) {
-
+this.contact.showLoader = "show-loader";
     var data = {
       from: "edin.lonic@edu.fit.ba",
       to: "edin.lonic@edu.fit.ba, lonic__@hotmail.com",
